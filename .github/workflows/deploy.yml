@@ -1,19 +1,22 @@
-name: Deploy Application
+name: Laravel
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
-  create-deployment-artifacts:
+  laravel-deployment:
     name: create-deployment-artifacts
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v2
 
-      - name: compile css and js 
-        run: |
-          npm install
-          npm run prod
+    - name: configure php 8.2
+    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+      with:
+        php-version: '8.2'
+        extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
+
+    

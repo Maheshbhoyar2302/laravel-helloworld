@@ -1,0 +1,11 @@
+[
+    {
+      "name": "laravel",
+      "ip": "13.127.240.42",
+      "username": "ec2-user",
+      "port": "22",
+      "beforeHooks": "",
+      "afterHooks": "",
+      "path": ""
+    }
+  ]
